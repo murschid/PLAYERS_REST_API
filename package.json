@@ -1,7 +1,7 @@
 {
   "name": "Express REST API",
   "version": "1.0.0",
-  "description": "",
+  "description": "Complete REST API by using Express frameword with Node JS",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Murshid",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.0.6",
