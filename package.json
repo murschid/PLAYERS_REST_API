@@ -1,7 +1,7 @@
 {
   "name": "Express REST API",
   "version": "1.0.0",
-  "description": "Complete REST API by using Express frameword with Node JS",
+  "description": "Complete REST API by using Express framework with Node JS",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

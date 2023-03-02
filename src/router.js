@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const dbLocation = path.resolve("src", "data.json");
 
+// adding a new player
 router.post("/player", async (req, res) => {
 	const player = {
 		...req.body,
@@ -16,12 +17,14 @@ router.post("/player", async (req, res) => {
 	res.status(200).json(player)
 });
 
+// getting all player
 router.get("/players", async (req, res) => {
 	const data = await fs.readFileSync(dbLocation);
 	const players = JSON.parse(data);
 	res.status(201).json(players);
 });
 
+// getting a specific player
 router.get("/player/:id", async (req, res) => {
 	const id = req.params.id;
 	const data = await fs.readFileSync(dbLocation);
@@ -37,6 +40,7 @@ router.get("/player/:id", async (req, res) => {
 	res.status(201).json(player);
 });
 
+// updating a player
 router.patch("/player/:id", async (req, res) => {
 	const id = req.params.id;
 	const data = await fs.readFileSync(dbLocation);
@@ -58,6 +62,7 @@ router.patch("/player/:id", async (req, res) => {
 	res.status(200).json(player)
 });
 
+// updating and or adding a player
 router.put("/player/:id", async (req, res) => {
 	const id = req.params.id;
 	const data = await fs.readFileSync(dbLocation);
@@ -83,6 +88,7 @@ router.put("/player/:id", async (req, res) => {
 	res.status(200).json(player);
 });
 
+// deleting a player
 router.delete("/player/:id", async (req, res) => {
 	const id = req.params.id;
 	const data = await fs.readFileSync(dbLocation);
@@ -103,5 +109,6 @@ router.delete("/player/:id", async (req, res) => {
 	await fs.writeFileSync(dbLocation, JSON.stringify(newPlayers));
 	res.status(203).send();
 });
+
 
 module.exports = router;
